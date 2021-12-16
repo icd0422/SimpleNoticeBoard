@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Service
 @Transactional
@@ -12,6 +13,10 @@ import javax.transaction.Transactional;
 public class BoardService {
 
     private final BoardRepository boardRepository;
+
+    public List<NoticeBoard> registerRanking() {
+        return boardRepository.findAll();
+    }
 
     public long registerRanking(NoticeBoard noticeBoard) {
         return boardRepository.save(noticeBoard).getId();
