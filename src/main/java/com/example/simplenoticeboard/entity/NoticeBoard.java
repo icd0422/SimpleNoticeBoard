@@ -8,6 +8,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Getter
 @Entity
+@Setter
 @Table(name = "tb_notice_board")
 public class NoticeBoard extends BaseTimeEntity {
     @Id
